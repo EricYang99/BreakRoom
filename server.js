@@ -43,7 +43,7 @@ app.get('/:room', (req, res) => {
     res.render('room', {roomName: req.params.room}); //This will get the room
 })
 
-server.listen(80);
+server.listen(8080);
 
 //This will contain all the users and their server ids and change it into their names
 

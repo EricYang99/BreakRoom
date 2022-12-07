@@ -1,5 +1,5 @@
 //Where server is hosting --> Location
-const socket = io("http://localhost:3000", { transports: ['websocket'] });
+const socket = io("http://ec2-54-219-81-12.us-west-1.compute.amazonaws.com:8080");
 
 //This is changing the html
 const messageContainer = document.getElementById("messageContainer")

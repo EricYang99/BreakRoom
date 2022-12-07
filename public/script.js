@@ -1,5 +1,5 @@
 //Where server is hosting --> Location
-const socket = io("http://localhost:8080", { transports: ['websocket'] });
+const socket = io("https://ericyang99.github.io/BreakRoom:8080", { transports: ['websocket'] });
 
 //This is changing the html
 const messageContainer = document.getElementById("messageContainer")

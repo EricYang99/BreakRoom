@@ -5,102 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat Room</title>
-    <style href = "styles.css">
-        body{
-            display: flex;
-            margin: 0;
-            padding: 0;
-        }
-        #roomHolder{
-            width: 30vw;
-            height: 100vh;
-            border: 1px black solid;
-            background-color: rgb(0, 0, 54);
-        }
-        #roomLink, #roomForm{
-            padding-left: 5%;
-            color: white;
-        }
-        #roomLink:hover{
-            background-color: rgb(85, 85, 197);
-        }
-        #roomLink{
-            background-color: blue;
-            font-size: 2rem;
-            padding-top: 2.5vh;
-            padding-bottom: 2.5vh;
-            width: calc(30vw - 5% - 4px);
-            border-bottom: 1px black solid;
-            display: block;
-            height: 5vh;
-            color: white;
-        }
-        #roomForm{
-            margin-top: 2vh;
-        }
-
-
-        #lobbyHolder{
-            width: 70vw;
-            height: 100vh;
-            text-align: center;
-        }
-        #lobbyBody{
-            text-align: center;
-        }
-        #lobbyForm{
-            width: 75%;
-            margin: 0 auto;
-            margin-top: 5vh;
-            height: 10vh;
-        }
-        #lobbyInput{
-            width: 100%;
-            height: 5vh;
-            margin-bottom: 1vh;
-        }
-        #lobbyContainer{
-            width: 75%;
-            margin: 0 auto;
-            height: 65vh;
-            border: 1px black solid;
-            overflow-y: scroll;
-        }
-    </style>
     <script src = "http://54.219.81.12:8080/socket.io/socket.io.js"></script>
 </head>
 <body>
-    <!--
-        This is where all our rooms are going to go
-        This will also help us render out our room.
-    -->
-    <div id = "roomHolder">
-        <div id = "roomContainer">
-            <% Object.keys(rooms).forEach(room => {%>
-                <a id = "roomLink" href = "/<%= room %>"><div>Join: <%= room %></div></a>
-                <%}) %>
-        </div>
-        <form id = "roomForm" action = "/room" method = "POST">
-            <p>
-                Create New Room:
-                <input name = "room" type = "text" required>
-                <button type = "submit">New Room</button>
-            </p>
-        </form>
-    </div>
-
-
-    <div id = "lobbyHolder">
-        <h1>Welcome to Group 8's Chat Lobby!</h1>
-        <!--This is the form that we use to send messages-->
-        <div id = "lobbyBody">
-            <div id = "lobbyContainer"></div>
-            <form id = "lobbyForm">
-                <input type = "text" id = "lobbyInput">
-                <button type = "submit" id = "sendButton">Send</button>
-            </form>
-        </div>
-    </div>
+    <div id = "messageContainer"></div>
+    <form id = "sendMessage">
+        <input type = "text" id = "messageInput">
+        <button type = "submit" id = "sendButton">Send</button>
+    </form>
     <script src = "script.js"></script>
 </body>
 </html>
